@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	Vos informations ont bien été enregistrées! <br><br>
 	
-	ma première JSP Spring !!!!!
-
-
+	Prenom : ${compte.prenom } <br>
+	Nom : ${compte.nom } <br>
+	Age : ${compte.age } <br>
+	
 </body>
 </html>
