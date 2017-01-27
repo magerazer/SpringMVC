@@ -27,11 +27,19 @@
 		<td><form:input path="age"/></td>
 		<td><form:errors path="age"/></td>		
 		</tr>
+		<td>mail :</td>
+		<td><form:input path="mail"/></td>
+		<td><form:errors path="mail"/></td>		
+		</tr>
 		<tr>
 		<td><form:button name="enregistrer" value="enregistrer">Enregistrer</form:button></td>
 		</tr>
 		</table>
 	</form:form>
+	
+	<a href="english.htm">english</a>
+	<a href="french.htm">french</a>
+
 
 </body>
 </html>

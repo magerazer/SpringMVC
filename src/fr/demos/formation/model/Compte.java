@@ -1,11 +1,21 @@
 package fr.demos.formation.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Compte {
 
+	@Size(min=1, max=15)
 	private String nom;
 	private String prenom;
+	
+	@Min(1)
 	private int age;
 	
+	@Pattern(regexp="^[A-Za-z0-9][A-Za-z0-9.-_]+@([a-zA-Z0-9._-]+\\.[a-z]{2,6})+$" 
+			)
+	private String mail;
 	
 	public String getPrenom() {
 		return prenom;
@@ -29,6 +39,14 @@ public class Compte {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 	
 	

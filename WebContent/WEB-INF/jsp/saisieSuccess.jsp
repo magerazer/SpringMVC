@@ -12,6 +12,6 @@
 	Prenom : ${compte.prenom } <br>
 	Nom : ${compte.nom } <br>
 	Age : ${compte.age } <br>
-	
+	Mail : ${compte.mail } <br>
 </body>
 </html>
