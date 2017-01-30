@@ -20,6 +20,13 @@
  -->
 	<context:component-scan base-package="fr.demos.formation.controller, fr.demos.formation.model"></context:component-scan>
 	
+	<bean id="compteController" class="fr.demos.formation.controller.CompteController">
+		<property name="compteDao" ref="comptedao" />
+	</bean>
+	
+	<bean id="comptedao"
+		class="fr.demos.formation.data.CompteDAOMySQL"/>
+	
 	
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>

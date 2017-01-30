@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.LocaleResolver;
 
+import fr.demos.formation.data.CompteDAO;
 import fr.demos.formation.model.Compte;
+
 
 @Controller
 @SessionAttributes({"compte"})
@@ -25,6 +28,9 @@ public class CompteController {
 	
 	@Autowired
 	private LocaleResolver sessionLocalResolver;
+	
+	@Autowired
+	private CompteDAO compteDao;
 	
 	@RequestMapping(value = "/saisieCompte.htm", method = RequestMethod.GET)
 	public String affichePage(ModelMap model) {
@@ -44,6 +50,14 @@ public class CompteController {
 			System.out.println("le nom : " + compte.getNom());
 			System.out.println("le prenom : " + compte.getPrenom());
 			System.out.println("l age : " + compte.getAge());
+			
+			try {
+				compteDao.insert(compte);
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			}
+			
 			return "saisieSuccess";
 		}
 		

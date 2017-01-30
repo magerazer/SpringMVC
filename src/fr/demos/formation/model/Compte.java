@@ -17,6 +17,9 @@ public class Compte {
 			)
 	private String mail;
 	
+	//@DateTime..
+	//private String anneeNaissance
+	
 	public String getPrenom() {
 		return prenom;
 	}
