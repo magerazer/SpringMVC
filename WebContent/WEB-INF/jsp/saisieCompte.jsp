@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	
-	ma première JSP Spring !!!!!
+	<h1>ma première JSP Spring !!!!!</h1>
+	
 	<form:form modelAttribute="compte" action="enregistrerCompte.htm" method="POST">
 		<table>
 		<tr>	
@@ -27,9 +28,15 @@
 		<td><form:input path="age"/></td>
 		<td><form:errors path="age"/></td>		
 		</tr>
+		<tr>
 		<td>mail :</td>
 		<td><form:input path="mail"/></td>
 		<td><form:errors path="mail"/></td>		
+		</tr>
+		<tr>
+		<td>annee de naissance :</td>
+		<td><form:input path="anneeNaissance"/></td>
+		<td><form:errors path="anneeNaissance"/></td>		
 		</tr>
 		<tr>
 		<td><form:button name="enregistrer" value="enregistrer">Enregistrer</form:button></td>
@@ -39,6 +46,9 @@
 	
 	<a href="english.htm">english</a>
 	<a href="french.htm">french</a>
+<br>
+<br>
+	<a href="listeDesComptes.htm">liste des comptes</a>
 
 
 </body>

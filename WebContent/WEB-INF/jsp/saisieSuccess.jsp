@@ -13,5 +13,6 @@
 	Nom : ${compte.nom } <br>
 	Age : ${compte.age } <br>
 	Mail : ${compte.mail } <br>
+	Annee naissance : ${compte.anneeNaissance}
 </body>
 </html>

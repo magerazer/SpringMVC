@@ -1,8 +1,12 @@
 package fr.demos.formation.model;
 
+import java.time.LocalDate;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Compte {
 
@@ -17,9 +21,27 @@ public class Compte {
 			)
 	private String mail;
 	
-	//@DateTime..
-	//private String anneeNaissance
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private LocalDate anneeNaissance;
 	
+	public Compte() {
+	}
+	
+	public Compte(String mail, String nom, String prenom, LocalDate anneeNaissance) {
+		this.mail = mail;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.anneeNaissance = anneeNaissance;
+	}
+
+	public LocalDate getAnneeNaissance() {
+		return anneeNaissance;
+	}
+
+	public void setAnneeNaissance(LocalDate anneeNaissance) {
+		this.anneeNaissance = anneeNaissance;
+	}
+
 	public String getPrenom() {
 		return prenom;
 	}

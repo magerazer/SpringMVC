@@ -1,5 +1,7 @@
 package fr.demos.formation.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +11,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +33,14 @@ public class CompteController {
 	@Autowired
 	private CompteDAO compteDao;
 	
+	public CompteDAO getCompteDao() {
+		return compteDao;
+	}
+
+	public void setCompteDao(CompteDAO compteDao) {
+		this.compteDao = compteDao;
+	}
+
 	@RequestMapping(value = "/saisieCompte.htm", method = RequestMethod.GET)
 	public String affichePage(ModelMap model) {
 		model.addAttribute("compte", new Compte());
@@ -62,6 +71,23 @@ public class CompteController {
 		}
 		
 	}
+	
+	@RequestMapping(value = "/listeDesComptes.htm", method = RequestMethod.GET)
+	public String listeCompte(ModelMap model) {
+
+			List<Compte> comptes = new ArrayList();
+		
+			try {
+				comptes = compteDao.select();
+			} catch (Exception e) {				
+				e.printStackTrace();
+			}
+			model.addAttribute("comptes", comptes);
+			
+			return "listeComptes";
+				
+	}
+	
 	
 	@RequestMapping(value = "/english.htm", method = RequestMethod.GET)
 	public String english(HttpServletRequest request, HttpServletResponse response) {

@@ -1,12 +1,14 @@
 package fr.demos.formation.data;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
 import fr.demos.formation.model.Compte;
 
-@Repository
+
 public interface CompteDAO {
 
 	void insert (Compte a) throws Exception;
+
+	List<Compte> select();
 	
 }
