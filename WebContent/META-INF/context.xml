@@ -34,7 +34,8 @@
                	username="root" 
                	password="" 
                	driverClassName="com.mysql.jdbc.Driver"
-               	url="jdbc:mysql://localhost:3306/SpringJava"/>
+               	url="jdbc:mysql://localhost:3306/SpringJava"
+               	/>
                	               	               	
 </Context>
 

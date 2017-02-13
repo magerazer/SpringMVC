@@ -29,7 +29,7 @@ public class CompteController {
 	
 	@Autowired
 	private LocaleResolver sessionLocalResolver;
-	
+	 
 	@Autowired
 	private CompteDAO compteDao;
 	
